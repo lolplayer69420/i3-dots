@@ -1,0 +1,57 @@
+(defwindow powermenu
+    :monitor 0
+    :geometry (geometry :x "-1%"
+                        :y "50px"
+                        :width "20%"
+                        :height "0%"
+                        :anchor "top right")
+    :stacking "fg"
+    :windowtype "normal"
+    :wm-ignore true
+(power_layout))
+
+(defwidget power_layout []
+    (box :class "powermenu_layout"
+         :orientation "vertical"
+         :spacing 0
+         :style "background-color: #11111b"
+    (clock)
+    (date)
+    (buttons)))
+
+(defwidget clock []
+    (box :class "clock"
+         :orientation "horizontal"
+         :halign "center"
+         :valign "baseline"
+    (label :text time)))
+
+(defwidget date[]
+  (box :class "date"
+       :orientation "horizontal"
+       :halign "center"
+       :valing "start"
+    (calendar :class "calendar"
+              :show-heading "true"
+              :show-day-names "true")))
+
+(defwidget buttons []
+    (box :class "buttons"
+         :spacing 20
+         :orientation "horizontal"
+         :halign "center"
+         :valign "center"
+    (button :onclick "eww close powermenu"
+            :class "exit"
+        "")
+    (button :onclick "systemctl poweroff"
+            :class "shutdown"
+        "󰐥")
+    (button :onclick "systemctl reboot"
+            :class "reboot"
+        "󰑙")
+    (button :onclick "i3-msg exit"
+            :class "logout"
+        "󰈆")))
+(defpoll time :interval "1s"
+    'date +"%I:%M %P"')

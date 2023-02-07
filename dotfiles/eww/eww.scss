@@ -1,0 +1,48 @@
+* {
+    all: unset; 
+  }
+
+.powermenu_layout {
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.powermenu_index {
+    font-family: "Material Design Icons Desktop Regular", "Google Sans Regular";
+}
+
+.clock {
+    color: #cdd6f4;
+    font-size: 40px;
+}
+
+.date {
+    background-color: #1e1e2e;
+    border-radius: 8px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.exit { 
+    color: #cdd6f4;
+    font-size: 40px;
+}
+
+.shutdown {
+    border-radius: 7px;
+    color: #f38ba8;
+    font-size: 75px;
+}
+
+.reboot {
+    color: #f9e2af;
+    font-size: 75px;
+}
+
+.logout {
+    border-radius: 7px;
+    color: #f5c2e7;
+    font-size: 75px;
+    padding: 8px;
+}
